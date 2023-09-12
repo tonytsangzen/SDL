@@ -143,7 +143,8 @@ keycode_to_SDL(int keycode)
         case AKEYCODE_DPAD_CENTER:
             /* This is handled better by applications as the A button */
             /*button = 19;*/
-            button = SDL_CONTROLLER_BUTTON_A;
+            //button = SDL_CONTROLLER_BUTTON_A;
+			button = SDL_CONTROLLER_BUTTON_START;
             break;
 
         /* More gamepad buttons (API 12), these get mapped to 20...35*/
@@ -196,6 +197,8 @@ button_to_scancode(int button)
         return SDL_SCANCODE_LEFT;
     case SDL_CONTROLLER_BUTTON_DPAD_RIGHT:
         return SDL_SCANCODE_RIGHT;
+        case SDL_CONTROLLER_BUTTON_START:
+            return SDL_SCANCODE_SELECT;
     }
 
     /* Unsupported button */
